@@ -3,12 +3,14 @@
 #include <algorithm>
 #include <ctime>
 using namespace std;
-
+//.,.	
 template<typename T1, typename T2>
 class Pair {
 public:
     T1 first;
     T2 second;
+    Pair(){
+    }
     Pair(T1 x, T2 y)
     {
         first=x;
@@ -18,6 +20,20 @@ public:
         if(first>other.first)
             return true;
         else if(first==other.first&&second>other.second)
+            return true;
+        else
+            return false;
+    }
+    bool operator==(const Pair& other) const{
+        if(first==other.first&&second=other.second)
+            return true;
+        else
+            return false;
+    }
+    bool operator<(const Pair& other) const{
+        if(first<other.first)
+            return true;
+        else if(first==other.first&&second<other.second)
             return true;
         else
             return false;
@@ -67,4 +83,4 @@ int main() {
             cout << "a[" << i << "].second != b[" << i << "].second: " << a[i].second << " != " << b[i].second << endl;
         }
     }
-}
+}	
